@@ -50,14 +50,14 @@ var blink = function(){
         colon0.style.fill = alt[i];
         colon1.style.fill = alt[i];
         i = (i+1) % alt.length;
-    }, 3000/5);
+    }, 3000/3);
 }
 
 var elapse = function(){
     var h = date.getHours();
     var m = date.getMinutes();
     var s = date.getSeconds();
-
+    
     setSeconds(s);
     setMinutes(m);
     setHours(h);
@@ -67,15 +67,17 @@ var elapse = function(){
             s = 0
             m++;
             setMinutes(m);
-            if (m === 59){
+            if (m === 60){
                 m = 0;
+                setMinutes(m);
                 h++;
                 setHours(h);
                 if (h === 24){
                     h = 0;
+                    setHours(h);
                 }
             }
-        };
+        }
         console.log(s, m , h)
         s++;
         setSeconds(s);
