@@ -14,17 +14,24 @@ to-do
 //E ((0x7E >> 6) & 1{)
 //F ((0x7E >> 6) & 1)
 //G ((0x7E >> 6) & 1)
+
+
 //if 1 turn on 
 //if 0 turn off     
-
 const OFFCOLOR = "rgba(141, 1, 1, 0.3)";
 const ONCOLOR = "rgba(245, 21, 21, 1)";
+const date = new Date();
+
 var colon = document.getElementById("colon-0").getElementById("g0"); 
 
 var seg_0 = getElements(0);
 var seg_1 = getElements(1);
 var seg_2 = getElements(2);
 var seg_3 = getElements(2);
+
+console.log(seg_0.a);
+
+console.log(date.getMinutes());
 
 window.onload = function (){
     //make the colon blink between clock
@@ -52,4 +59,20 @@ function getElements(seg_num){
         result[seg[i]] = document.getElementById("seg-"+seg_num).getElementById("seg-"+seg_num+seg[i]);
     }
     return result;
+}
+
+function sevenSegments(encoding, seg){
+    seg_enc = ["a","b","c","d","e","f","g"];
+    for(let i = 0; i<7,i++){
+        if(binary((encoding >> 6) & 1)){
+            seg.seg_enc[i]
+        }
+    }
+}
+
+function binary(int){
+    if (int === 1){
+        return true;
+    }
+    return false;
 }
