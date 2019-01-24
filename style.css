@@ -1,11 +1,17 @@
+body{
+    background-color: black;
+}
+
 #content{
     background-color: black;
     width: 1000px;
     height: 800px;
     text-align: center;
 }
+
 #seg-0{
 }
+
 #segments{
     width: 1000px;
     padding-top:400px;
